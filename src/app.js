@@ -10,9 +10,7 @@ const port = 3000
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
 const { user, task } = controller;
-
 
 app.post("/create-user", async (req, res) => {
   let lastName = req.body.lastName
@@ -54,8 +52,7 @@ app.get('/all-user', async (req, res) => {
   res.json(users)
 })
 
-// router
-// api
+
 app.get("/user-by-name", async (req, res) => {
   let users;
   users = await user.getUserByName()
